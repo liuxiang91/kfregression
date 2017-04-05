@@ -13,7 +13,7 @@ for i=2:numPat+1
     y=[y; trainFiltProg{i,8}'];
 end
 
-csvwrite([pwd '\kfregression\forReg.csv'],[x y]);
+csvwrite([pwd '/kfregression/forReg.csv'],[x y]);
 
 try
     system(['Rscript ' pwd '/kfregression/reg.R']); %for MAC OSX
