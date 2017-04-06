@@ -12,10 +12,10 @@ for i=2:numPat+1
     y=[y; trainFiltProg{i,12}'];
 end
 
-    csvwrite([pwd '/kfregression/forReg.csv'],[x y]);
+csvwrite(fullfile([pwd '/kfregression’] ,’forReg.csv’)],[x y]);
 
 try
-    system('/Library/Frameworks/R.framework/Versions/3.2/Resources/bin/Rscript regJPnovar.R'); %for MAC OSX
+    system(['Rscript ' pwd '/kfregression/reg.R']); %for MAC OSX
 catch
     
 end
