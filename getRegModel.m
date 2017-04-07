@@ -20,14 +20,6 @@ try
 catch
     
 end
-try
-    system(['"C:\Users\liuxiang\Documents\R\R-3.3.2\bin\x64\Rscript" ' pwd '\kfregression\reg.R']);
-catch
-end
-try
-    system(['C:\VApps\R\R-3.3.1\bin\x64\Rscript reg.R ' pwd '\kfregression\reg.R']);
-catch
-end
 
 
 end

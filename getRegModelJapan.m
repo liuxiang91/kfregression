@@ -8,7 +8,7 @@ numPat=size(trainFiltProg,1)-1;
 x=[];
 y=[];
 for i=2:numPat+1
-    x=[x; [trainFiltProg{i,3}' trainFiltProg{i,4}' trainFiltProg{i,5}' trainFiltProg{i,6}' trainFiltProg{i,7}'  trainFiltProg{i,8}' trainFiltProg{i,9}' trainFiltProg{i,10}' trainFiltProg{i,11}'] ];
+	x=[x; [(i-1)*ones(size(trainFiltProg{i,3},2),1) trainFiltProg{i,3}' trainFiltProg{i,4}' trainFiltProg{i,5}' trainFiltProg{i,6}' trainFiltProg{i,7}'  trainFiltProg{i,8}' trainFiltProg{i,9}' trainFiltProg{i,10}' trainFiltProg{i,11}'] ];
     y=[y; trainFiltProg{i,12}'];
 end
 
@@ -19,15 +19,6 @@ csvwrite(fullfile([pwd '/kfregression'] ,'forReg.csv'),[x y]);
  catch
     
  end
-
-try
-   system('"C:\Users\liuxiang\Documents\R\R-3.3.2\bin\x64\Rscript" regJP.R');
-catch
-end
-try
-    system('C:\VApps\R\R-3.3.1\bin\x64\Rscript regJP.R');
-catch
-end
 
 
 end

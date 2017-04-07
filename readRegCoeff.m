@@ -1,7 +1,7 @@
 function o= readRegCoeff()
 
 
-    out=textread([pwd '/regCoeff.csv'], '%s', 'whitespace',',');
+    out=textread(fullfile([pwd '/kfregression'] ,'regCoeff.csv'), '%s', 'whitespace',',');
 
 nums = out(4:2:end);
 o=[];
