@@ -1,5 +1,5 @@
 data=read.csv(paste(getwd(),'/kfregression/forReg.csv',sep = ""),header=FALSE)
-names(data)=c('MD','IOP','PSD','MDvel','IOPvel','PSDvel','MDacc','IOPacc','PSDacc','Baseline_MD','Baseline_IOP','Baseline_PSD','Age','Race','Sex','Prog')
+names(data)=c('ID','MD','IOP','PSD','MDvel','IOPvel','PSDvel','MDacc','IOPacc','PSDacc','Baseline_MD','Baseline_IOP','Baseline_PSD','Age','Race','Sex','Prog')
 fullModel <- glm(Prog~MD+IOP+PSD+MDvel+IOPvel+PSDvel+MDacc+IOPacc+PSDacc+Baseline_MD+Baseline_IOP+Baseline_PSD+Age+Race+Sex, data=data, family=binomial(link="logit"))
 summary(fullModel)
 model=step(fullModel,direction="both")

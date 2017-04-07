@@ -15,7 +15,7 @@ end
 csvwrite(fullfile([pwd '/kfregression'] ,'forReg.csv'),[x y]);
 
  try
-    system(['Rscript ' pwd '/kfregression/regJPnovar_caa.R']); %for MAC OSX
+    system(['Rscript ' pwd '/kfregression/regJPnovar.R']); %for MAC OSX
  catch
     
  end
