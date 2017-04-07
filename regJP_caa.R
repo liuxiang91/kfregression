@@ -9,7 +9,7 @@ library("MuMIn")
 
 system.time(
     gmod <- geeglm(Prog~MD+IOP+PSD+MDvel+IOPvel+PSDvel+MDacc+IOPacc+PSDacc+Baseline_MD+Baseline_IOP+Baseline_PSD+Age+
-                                    #Race+
+                                    Race+
                                     Sex+SphEq+CCT+AxLen+DiskHem, data=data, family=binomial(link="logit"), id=ID, corstr="independence")
 )
 #   gmod <- geeglm(Prog~MD+IOP+PSD+MDvel+IOPvel+PSDvel+MDacc+IOPacc+PSDacc+Baseline_MD+Baseline_IOP+Baseline_PSD+Age+
