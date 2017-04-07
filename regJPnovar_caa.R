@@ -10,7 +10,7 @@ library("MuMIn")
 system.time(
     gmod <- geeglm(Prog~MD+IOP+PSD+MDvel+IOPvel+PSDvel+MDacc+IOPacc+PSDacc+Baseline_MD+Baseline_IOP+Baseline_PSD+Age+
                                     #Race+
-                                    Sex+SphEq+CCT+AxLen+DiskHem, data=data, family=binomial(link="logit"), id=ID, corstr="independence")
+                                    Sex, data=data, family=binomial(link="logit"), id=ID, corstr="independence")
 )
 #   gmod <- geeglm(Prog~MD+IOP+PSD+MDvel+IOPvel+PSDvel+MDacc+IOPacc+PSDacc+Baseline_MD+Baseline_IOP+Baseline_PSD+Age+
 #                                   #Race+
@@ -98,5 +98,4 @@ out3[names(coef(gmod2))] <- coef(gmod2) # add values from reduced model
 
 # output regression coefficients
 write.csv(out3, file=paste(getwd(),'/kfregression/regCoeff.csv',sep = ""))
-
 
