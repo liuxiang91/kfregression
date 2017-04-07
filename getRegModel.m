@@ -9,7 +9,7 @@ numPat=size(trainFiltProg,1)-1;
 x=[];
 y=[];
 for i=2:numPat+1
-    x=[x; [trainFiltProg{i,3}' trainFiltProg{i,4}' trainFiltProg{i,5}' trainFiltProg{i,6}' trainFiltProg{i,7}'] ];
+    x=[x; [(i-1)*ones(size(trainFiltProg{i,3},2),1)  trainFiltProg{i,3}' trainFiltProg{i,4}' trainFiltProg{i,5}' trainFiltProg{i,6}' trainFiltProg{i,7}'] ];
     y=[y; trainFiltProg{i,8}'];
 end
 
