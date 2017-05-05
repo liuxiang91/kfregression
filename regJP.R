@@ -10,5 +10,5 @@ c[[2]]=rep(0,16+4)
 names(c[[2]])=c('(Intercept)','MD','IOP','PSD','MDvel','IOPvel','PSDvel','MDacc','IOPacc','PSDacc','Baseline_MD','Baseline_IOP','Baseline_PSD','Age','Race','Sex','SphEq',	'CCT',	'AxLen',	'DiskHem')
 out=tapply(unlist(c), names(unlist(c)), sum)
 out1=out[c('(Intercept)','MD','IOP','PSD','MDvel','IOPvel','PSDvel','MDacc','IOPacc','PSDacc','Baseline_MD','Baseline_IOP','Baseline_PSD','Age','Race','Sex','SphEq',	'CCT',	'AxLen',	'DiskHem')]
-write.csv(out1,file='regCoeff.csv')
+write.csv(out1, file=paste(getwd(),'/kfregression/regCoeff.csv',sep = ""))
 
