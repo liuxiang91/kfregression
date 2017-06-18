@@ -14,11 +14,16 @@ end
 
 csvwrite(fullfile([pwd '/kfregression'] ,'forReg.csv'),[x y]);
 
- try
-    system(['Rscript ' pwd '/kfregression/regJP_caa.R']); %for MAC OSX
- catch
-    
- end
+try
+    system(['Rscript ' pwd '/kfregression/reg.R']); %for MAC OSX
+catch
+    try 
+        system(['/Library/Frameworks/R.framework/Resources/bin/Rscript ' pwd '/kfregression/regJP.R']);
+    catch
+    end
+end
+
+
 
 
 end

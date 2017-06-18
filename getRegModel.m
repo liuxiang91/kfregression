@@ -1,7 +1,6 @@
 function [ output_args ] = getRegModel( A, C, Q, R, INITX, INITV, trainRawProg)
 %GETREGMODEL Summary of this function goes here
 %   Detailed explanation goes here
-global os;
 [FILTEREDX]=kalman_filterpatients(trainRawProg(2:end,:), A, C, Q, R, INITX, INITV);
 trainFiltProg=trainRawProg;
 trainFiltProg(2:end,3)=FILTEREDX(:,1);
@@ -18,7 +17,10 @@ csvwrite(fullfile([pwd '/kfregression'] ,'forReg.csv'),[x y]);
 try
     system(['Rscript ' pwd '/kfregression/reg.R']); %for MAC OSX
 catch
-    
+    try 
+        system(['/Library/Frameworks/R.framework/Resources/bin/Rscript ' pwd '/kfregression/reg.R']);
+    catch
+    end
 end
 
 
